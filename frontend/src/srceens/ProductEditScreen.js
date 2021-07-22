@@ -43,7 +43,7 @@ const ProductEditScreen = {
         if (data.error) {
           showMessage(data.error);
         } else {
-          showMessage('Image uploaded successfully.');
+          showMessage('Image enviada.');
           document.getElementById('image').value = data.image;
         }
       });
@@ -54,59 +54,52 @@ const ProductEditScreen = {
     return `
     <div class="content">
       <div>
-        <a href="/#/productlist">Back to products</a>
+        <a href="/#/productlist" >Voltar para os produtos</a>
       </div>
       <div class="form-container">
         <form id="edit-product-form">
           <ul class="form-items">
             <li>
-              <h1>Edit Product ${product._id.substring(0, 8)}</h1>
+              <h1>Produto Editado ID: ${product._id.substring(0, 8)}</h1>
             </li>
             <li>
-              <label for="name">Name</label>
-              <input type="text" name="name" value="${
-                product.name
-              }" id="name" />
+              <label for="name">Nome</label>
+              <input type="text" name="name" value="${product.name }"
+               id="name" />
             </li>
             <li>
-              <label for="price">Price</label>
-              <input type="number" name="price" value="${
-                product.price
-              }" id="price" />
+              <label for="price">Preço</label>
+              <input type="number" name="price" value ="${product.price}"
+              id="price" />
             </li>
             <li>
-              <label for="image">Image (680 x 830)</label>
-              <input type="text" name="image" value="${
-                product.image
-              }" id="image" />
+              <label for="image">Imagem (680 x 830)</label>
+              <input type="text" name="image" value="${product.image}" 
+                id="image" />
               <input type="file" name="image-file" id="image-file" />
             </li>
             <li>
-              <label for="brand">Brand</label>
-              <input type="text" name="brand" value="${
-                product.brand
-              }" id="brand" />
+              <label for="brand">Marca</label>
+              <input type="text" name="brand" value= "${product.brand}"
+              id="brand" />
             </li>
             <li>
-              <label for="countInStock">Count In Stock</label>
-              <input type="text" name="countInStock" value="${
-                product.countInStock
-              }" id="countInStock" />
+              <label for="countInStock">Quantidade</label>
+              <input type="text" name="countInStock" value="${product.countInStock}"
+              id="countInStock" />
             </li>
             <li>
-              <label for="category">Category</label>
-              <input type="text" name="category" value="${
-                product.category
-              }" id="category" />
+              <label for="category">Categoria</label>
+              <input type="text" name="category" value="${product.category}"
+              id="category" />
             </li>
             <li>
-              <label for="description">Description</label>
-              <input type="text" name="description" value="${
-                product.description
-              }" id="description" />
+              <label for="description">Descrição</label>
+              <input type="text" name="description" value="${product.description}"
+              id="description" />
             </li>
             <li>
-              <button type="submit" class="primary">Update</button>
+              <button type="submit" class="primary">Atualizar</button>
             </li>
           </ul>
         </form>

@@ -7,11 +7,14 @@ const DashboardMenu = {
           <a href="/#/dashboard">Dashboard</a>
         </li>
         <li class="${props.selected === 'orders' ? 'selected' : ''}">
-          <a href="/#/orderlist">Orders</a>
+          <a href="/#/orderlist">Pedidos</a>
         </li>
         <li class="${props.selected === 'products' ? 'selected' : ''}">
-          <a href="/#/productlist">Products</a>
+          <a href="/#/productlist">Produtos</a>
         </li>
+        <li class="${props.selected === 'client' ? 'selected' : ''}">
+        <a href="/#/productlist">Clientes</a>
+      </li>
       </ul>
     </div>
     `;

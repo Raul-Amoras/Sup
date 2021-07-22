@@ -25,19 +25,19 @@ productRouter.post(
   isAdmin,
   expressAsyncHandler(async (req, res) => {
     const product = new Product({
-      name: 'sample product',
-      description: 'sample desc',
-      category: 'sample category',
-      brand: 'sample brand',
+      name: 'CAMISA',
+      description: 'CAMISA PARA FUTEBOL',
+      category: 'ESPORTE',
+      brand: 'ADIDAS',
       image: '/images/product-1.jpg',
     });
     const createdProduct = await product.save();
     if (createdProduct) {
       res
         .status(201)
-        .send({ message: 'Product Created', product: createdProduct });
+        .send({ message: 'Produto Criado', product: createdProduct });
     } else {
-      res.status(500).send({ message: 'Error in creating product' });
+      res.status(500).send({ message: 'Erro ao Criar o produto' });
     }
   })
 );
@@ -58,12 +58,12 @@ productRouter.put(
       product.description = req.body.description;
       const updatedProduct = await product.save();
       if (updatedProduct) {
-        res.send({ message: 'Product Updated', product: updatedProduct });
+        res.send({ message: 'Produto Atualizado', product: updatedProduct });
       } else {
-        res.status(500).send({ message: 'Error in updaing product' });
+        res.status(500).send({ message: 'Erro ao atualizae produto' });
       }
     } else {
-      res.status(404).send({ message: 'Product Not Found' });
+      res.status(404).send({ message: 'Produto não encontrado' });
     }
   })
 );
@@ -75,9 +75,9 @@ productRouter.delete(
     const product = await Product.findById(req.params.id);
     if (product) {
       const deletedProduct = await product.remove();
-      res.send({ message: 'Product Deleted', product: deletedProduct });
+      res.send({ message: 'Produto Deletado', product: deletedProduct });
     } else {
-      res.status(404).send({ message: 'Product Not Found' });
+      res.status(404).send({ message: 'Produto não encontrado' });
     }
   })
 );

@@ -25,7 +25,7 @@ const PaymentScreen = {
       <form id="payment-form">
         <ul class="form-items">
           <li>
-            <h1>Payment</h1>
+            <h1>Pagamento</h1>
           </li>
           <li>
             <div>
@@ -42,13 +42,13 @@ const PaymentScreen = {
             <input type="radio"
             name="payment-method"
             id="stripe"
-            value="Stripe"
+            value="Boleto"
              />
-            <label for="stripe" >Stripe</label>
+            <label for="stripe" >Boleto</label>
            </div> 
         </li>
           <li>
-            <button type="submit" class="primary">Continue</button>
+            <button type="submit" class="primary">Continuar</button>
           </li>        
         </ul>
       </form>

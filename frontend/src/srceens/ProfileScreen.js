@@ -40,10 +40,10 @@ const ProfileScreen = {
       <form id="profile-form">
         <ul class="form-items">
           <li>
-            <h1>User Profile</h1>
+            <h1>Perfil de usuário</h1>
           </li>
           <li>
-            <label for="name">Name</label>
+            <label for="name">Nome</label>
             <input type="name" name="name" id="name" value="${name}" />
           </li>
           <li>
@@ -51,46 +51,46 @@ const ProfileScreen = {
             <input type="email" name="email" id="email" value="${email}" />
           </li>
           <li>
-            <label for="password">Password</label>
+            <label for="password">Senha</label>
             <input type="password" name="password" id="password" />
           </li>
           <li>
-            <button type="submit" class="primary">Update</button>
+            <button type="submit" class="primary">Atualizar</button>
           </li>
           <li>
-          <button type="button" id="signout-button" >Sign Out</button>
+          <button type="button" id="signout-button" >Logoff</button>
         </li>        
         </ul>
       </form>
     </div>
       </div>
       <div class="profile-orders">
-      <h2>Order History</h2>
+      <h2>Historico de compras</h2>
         <table>
           <thead>
             <tr>
-              <th>ORDER ID</th>
-              <th>DATE</th>
+              <th>ID</th>
+              <th>DATA</th>
               <th>TOTAL</th>
-              <th>PAID</th>
-              <th>DELIVERED</th>
-              <th>ACTIONS</th>
+              <th>PAGO</th>
+              <th>ENTREGUE</th>
+              <th>OPÇÕES</th>
             </tr>
           </thead>
           <tbody>
             ${
               orders.length === 0
-                ? `<tr><td colspan="6">No Order Found.</tr>`
+                ? `<tr><td colspan="6">Nem um pedido localizado.</tr>`
                 : orders
                     .map(
                       (order) => `
           <tr>
             <td>${order._id}</td>
             <td>${order.createdAt}</td>
-            <td>${order.totalPrice}</td>
-            <td>${order.paidAt || 'No'}</td>
-            <td>${order.deliveryAt || 'No'}</td>
-            <td><a href="/#/order/${order._id}">DETIALS</a> </td>
+            <td>R$${order.totalPrice}</td>
+            <td>${order.paidAt || 'Não'}</td>
+            <td>${order.deliveryAt || 'Não'}</td>
+            <td><a href="/#/order/${order._id}">DETALHES</a> </td>
           </tr>
           `
                     )

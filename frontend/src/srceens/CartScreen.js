@@ -67,12 +67,12 @@ const CartScreen = {
       <div class="cart-list">
         <ul class="cart-list-container">
           <li>
-            <h3>Shopping Cart</h3>
-            <div>Price</div>
+            <h3>Carrinho de compras</h3>
+            <div>Preço</div>
           </li>
           ${
             cartItems.length === 0
-              ? '<div>Cart is empty. <a href="/#/">Go Shopping</a>'
+              ? '<div>Carinho vazio. <a href="/#/"> Voltar as compras</a>'
               : cartItems
                   .map(
                     (item) => `
@@ -87,7 +87,7 @@ const CartScreen = {
                   </a>
                 </div>
                 <div>
-                  Qty: 
+                  Qtd: 
                   <select class="qty-select" id="${item.product}">
                   ${[...Array(item.countInStock).keys()].map((x) =>
                     item.qty === x + 1
@@ -99,12 +99,12 @@ const CartScreen = {
                   <button type="button" class="delete-button" id="${
                     item.product
                   }">
-                    Delete
+                    Remover
                   </button>
                 </div>
               </div>
               <div class="cart-price">
-                $${item.price}
+                R$${item.price}
               </div>
             </li>
             `
@@ -115,12 +115,12 @@ const CartScreen = {
       </div>
       <div class="cart-action">
           <h3>
-            Subtotal (${cartItems.reduce((a, c) => a + c.qty, 0)} items)
+            Subtotal (${cartItems.reduce((a, c) => a + c.qty, 0)} item)
             :
-            $${cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
+            R$${cartItems.reduce((a, c) => a + c.price * c.qty, 0)}
           </h3>
           <button id="checkout-button" class="primary fw">
-            Proceed to Checkout
+          Fazer o check-out
           </button>
       </div>
     </div>

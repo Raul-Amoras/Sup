@@ -73,23 +73,23 @@ const PlaceOrderScreen = {
       <div class="order">
         <div class="order-info">
           <div>
-            <h2>Shipping</h2>
+            <h2>Endereço de envio</h2>
             <div>
             ${shipping.address}, ${shipping.city}, ${shipping.postalCode}, 
             ${shipping.country}
             </div>
           </div>
           <div>
-            <h2>Payment</h2>
+            <h2>Pagamento</h2>
             <div>
-              Payment Method : ${payment.paymentMethod}
+              Forma de Pagamento : ${payment.paymentMethod}
             </div>
           </div>
           <div>
             <ul class="cart-list-container">
               <li>
-                <h2>Shopping Cart</h2>
-                <div>Price</div>
+                <h2>Carrinho de compras</h2>
+                <div>Preço</div>
               </li>
               ${orderItems
                 .map(
@@ -102,9 +102,9 @@ const PlaceOrderScreen = {
                     <div>
                       <a href="/#/product/${item.product}">${item.name} </a>
                     </div>
-                    <div> Qty: ${item.qty} </div>
+                    <div> Qtd: ${item.qty} </div>
                   </div>
-                  <div class="cart-price"> $${item.price}</div>
+                  <div class="cart-price"> R$${item.price}</div>
                 </li>
                 `
                 )
@@ -115,15 +115,15 @@ const PlaceOrderScreen = {
         <div class="order-action">
            <ul>
                 <li>
-                  <h2>Order Summary</h2>
+                  <h2>resumo do pedido</h2>
                  </li>
-                 <li><div>Items</div><div>$${itemsPrice}</div></li>
-                 <li><div>Shipping</div><div>$${shippingPrice}</div></li>
-                 <li><div>Tax</div><div>$${taxPrice}</div></li>
-                 <li class="total"><div>Order Total</div><div>$${totalPrice}</div></li> 
+                 <li><div>Items</div><div>R$${itemsPrice}</div></li>
+                 <li><div>Envio</div><div>R$${shippingPrice}</div></li>
+                 <li><div>Taxa</div><div>R$${taxPrice}</div></li>
+                 <li class="total"><div>Total Pedido</div><div>R$${totalPrice}</div></li> 
                  <li>
                  <button id="placeorder-button" class="primary fw">
-                 Place Order
+                 Finalizar Pedido
                  </button>
         </div>
       </div>

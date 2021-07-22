@@ -1,6 +1,6 @@
 const Error404Screen = {
   render: () => {
-    return `<div>Page not Found!</div>`;
+    return `<div>Pagina não encontrada!</div>`;
   },
 };
 export default Error404Screen;

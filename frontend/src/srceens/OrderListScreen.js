@@ -7,7 +7,7 @@ const OrderListScreen = {
     const deleteButtons = document.getElementsByClassName('delete-button');
     Array.from(deleteButtons).forEach((deleteButton) => {
       deleteButton.addEventListener('click', async () => {
-        if (confirm('Are you sure to delete this order?')) {
+        if (confirm('Tem certeza de que deseja excluir este pedido?')) {
           showLoading();
           const data = await deleteOrder(deleteButton.id);
           if (data.error) {
@@ -32,19 +32,19 @@ const OrderListScreen = {
     <div class="dashboard">
     ${DashboardMenu.render({ selected: 'orders' })}
     <div class="dashboard-content">
-      <h1>Orders</h1>
+      <h1>Pedidos</h1>
        
       <div class="order-list">
         <table>
           <thead>
             <tr>
               <th>ID</th>
-              <th>DATE</th>
+              <th>DATA</th>
               <th>TOTAL</th>
-              <th>USER</th>
-              <th>PAID AT</th>
-              <th>DELIVERED AT</th>
-              <th class="tr-action">ACTION</th>
+              <th>USUÁRIO</th>
+              <th>PAGO EM</th>
+              <th>ENVIADO EM</th>
+              <th class="tr-action">OPÇÕES</th>
             <tr>
           </thead>
           <tbody>
@@ -56,11 +56,11 @@ const OrderListScreen = {
               <td>${order.createdAt}</td>
               <td>${order.totalPrice}</td>
               <td>${order.user.name}</td>
-              <td>${order.paidAt || 'No'}</td>
-              <td>${order.deliveredAt || 'No'}</td>
+              <td>${order.paidAt || 'Não'}</td>
+              <td>${order.deliveredAt || 'Não'}</td>
               <td>
-              <button id="${order._id}" class="edit-button">Edit</button>
-              <button id="${order._id}" class="delete-button">Delete</button>
+              <button id="${order._id}" class="edit-button">Visualizar</button>
+              <button id="${order._id}" class="delete-button">Deletar</button>
               </td>
             </tr>
             `

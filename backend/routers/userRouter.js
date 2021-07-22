@@ -11,8 +11,8 @@ userRouter.get(
     try {
       const user = new User({
         name: 'admin',
-        email: 'admin@example.com',
-        password: 'jsamazona',
+        email: 'admin@gmail.com',
+        password: 'adm',
         isAdmin: true,
       });
       const createdUser = await user.save();
@@ -31,7 +31,7 @@ userRouter.post(
     });
     if (!signinUser) {
       res.status(401).send({
-        message: 'Invalid Email or Password',
+        message: 'Email ou senha Invalido',
       });
     } else {
       res.send({
@@ -55,7 +55,7 @@ userRouter.post(
     const createdUser = await user.save();
     if (!createdUser) {
       res.status(401).send({
-        message: 'Invalid User Data',
+        message: 'Dados de usuário inválidos',
       });
     } else {
       res.send({
@@ -76,7 +76,7 @@ userRouter.put(
 
     if (!user) {
       res.status(404).send({
-        message: 'User Not Found',
+        message: 'Usuário não existe',
       });
     } else {
       user.name = req.body.name || user.name;

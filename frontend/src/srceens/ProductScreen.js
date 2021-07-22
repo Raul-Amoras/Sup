@@ -20,7 +20,7 @@ const ProductScreen = {
     return `
     <div class="content">
       <div class="back-to-result">
-        <a href="/#/">Back to result </a>
+        <a href="/#/">Voltar Produtos </a>
       </div>
       <div class="details">
         <div class="details-image">
@@ -34,14 +34,14 @@ const ProductScreen = {
             <li>
             ${Rating.render({
               value: product.rating,
-              text: `${product.numReviews} reviews`,
+              text: `${product.numReviews} Avaliações`,
             })}
             </li>
             <li>
-              Price: <strong>$${product.price}</strong>
+              Preço: <strong>R$${product.price}</strong>
             </li>
             <li>
-              Description:
+              Descriçao:
               <div>
                 ${product.description}
               </div>
@@ -51,18 +51,18 @@ const ProductScreen = {
         <div class="details-action">
             <ul>
               <li>
-                Price: $${product.price}
+                Preço: R$${product.price}
               </li>
               <li>
                 Status : 
                   ${
                     product.countInStock > 0
-                      ? `<span class="success">In Stock</span>`
-                      : `<span class="error">Unavailable</span>`
+                      ? `<span class="success">Disponivel</span>`
+                      : `<span class="error">Avaliação</span>`
                   }
               </li>
               <li>
-                  <button id="add-button" class="fw primary">Add to Cart </div>
+                  <button id="add-button" class="fw primary">Adiconar ao Carrinho </div>
             </ul>
         </div>
       </div>

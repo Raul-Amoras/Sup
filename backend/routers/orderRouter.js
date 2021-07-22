@@ -79,7 +79,7 @@ orderRouter.get(
     if (order) {
       res.send(order);
     } else {
-      res.status(404).send({ message: 'Order Not Found' });
+      res.status(404).send({ message: 'Pedido não encontrado' });
     }
   })
 );
@@ -98,7 +98,7 @@ orderRouter.post(
       totalPrice: req.body.totalPrice,
     });
     const createdOrder = await order.save();
-    res.status(201).send({ message: 'New Order Created', order: createdOrder });
+    res.status(201).send({ message: 'Novo pedido criado', order: createdOrder });
   })
 );
 orderRouter.delete(
@@ -109,9 +109,9 @@ orderRouter.delete(
     const order = await Order.findById(req.params.id);
     if (order) {
       const deletedOrder = await order.remove();
-      res.send({ message: 'Order Deleted', product: deletedOrder });
+      res.send({ message: 'Pedido Deletdo', product: deletedOrder });
     } else {
-      res.status(404).send({ message: 'Order Not Found' });
+      res.status(404).send({ message: 'Pedido não encontrado' });
     }
   })
 );
@@ -130,9 +130,9 @@ orderRouter.put(
         orderID: req.body.orderID,
       };
       const updatedOrder = await order.save();
-      res.send({ message: 'Order Paid', order: updatedOrder });
+      res.send({ message: 'Pedido Pago', order: updatedOrder });
     } else {
-      res.status(404).send({ message: 'Order Not Found.' });
+      res.status(404).send({ message: 'Pedido nao encotrado.' });
     }
   })
 );
@@ -146,9 +146,9 @@ orderRouter.put(
       order.isDelivered = true;
       order.deliveredAt = Date.now();
       const updatedOrder = await order.save();
-      res.send({ message: 'Order Delivered', order: updatedOrder });
+      res.send({ message: 'Pedido Enviado', order: updatedOrder });
     } else {
-      res.status(404).send({ message: 'Order Not Found.' });
+      res.status(404).send({ message: 'Peido não encontrado.' });
     }
   })
 );

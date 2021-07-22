@@ -5,15 +5,15 @@ const Header = {
     const { name, isAdmin } = getUserInfo();
     return ` 
   <div class="brand">
-    <a href="/#/">jsamazona</a>
+    <a href="/#/">ShopperU</a>
   </div>
   <div>
   ${
     name
       ? `<a href="/#/profile">${name}</a>`
-      : `<a href="/#/signin">Sign-In</a>`
+      : `<a href="/#/signin">Login</a>`
   }    
-    <a href="/#/cart">Cart</a>
+    <a href="/#/cart">Carrinho</a>
     ${isAdmin ? `<a href="/#/dashboard">Dashboard</a>` : ''}
   </div>`;
   },
